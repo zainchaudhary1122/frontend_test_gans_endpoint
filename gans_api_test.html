@@ -1,0 +1,83 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>File Upload to API</title>
+</head>
+<body>
+    <h2>Upload PNG File</h2>
+    <input type="file" id="fileInput" accept=".png">
+    <button onclick="uploadFile()">Upload</button>
+    <p id="status"></p>
+
+    <script>
+        function uploadFile() {
+            var fileInput = document.getElementById('fileInput');
+            var file = fileInput.files[0];
+            var formData = new FormData();
+            formData.append("avatar_images", file);
+
+            fetch('http://74.235.53.222:8080/imageavatar/', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.text();
+                } else {
+                    throw new Error('Upload failed');
+                }
+            })
+            .then(data => {
+                document.getElementById('status').innerText = 'Upload successful';
+            })
+            .catch(error => {
+                document.getElementById('status').innerText = error.message;
+            });
+        }
+    </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Upload to API</title>
+</head>
+<body>
+    <h2>Upload PNG File</h2>
+    <input type="file" id="fileInput" accept=".png">
+    <button onclick="uploadFile()">Upload</button>
+    <p id="status"></p>
+
+    <script>
+        function uploadFile() {
+            var fileInput = document.getElementById('fileInput');
+            var file = fileInput.files[0];
+            var formData = new FormData();
+            formData.append("avatar_images", file);
+
+            fetch('https://huzaifa7524.github.io/gan/proxy.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.text();
+                } else {
+                    throw new Error('Upload failed');
+                }
+            })
+            .then(data => {
+                document.getElementById('status').innerText = 'Upload successful';
+            })
+            .catch(error => {
+                document.getElementById('status').innerText = error.message;
+            });
+        }
+    </script>
+</body>
+</html>
+
+
+
